@@ -1,3 +1,6 @@
+const userService = require("../../service/User/userService");
+const httpStatusCode = require("http-status-codes");
+
 /**
  * @swagger
  * paths:
@@ -22,4 +25,10 @@ exports.getAll = (req, res, next) => {
 
 exports.getById = (req, res, next) => {
   res.send("Users With Id");
+};
+
+exports.create = async (req, res, next) => {
+  const result = await userService.create(req);
+  console.log("resultController", result);
+  res.json(result).status(httpStatusCode.StatusCodes.OK);
 };
