@@ -22,7 +22,7 @@ const userSchema = new Schema(
     email: {
       type: Schema.Types.String,
       required: true,
-      unique: true
+      unique: true,
     },
     password: {
       type: Schema.Types.String,
